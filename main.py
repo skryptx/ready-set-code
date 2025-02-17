@@ -1,4 +1,4 @@
 print(type(122))
 print(type(122.121))
 print("ookdosw" == None)
-print(type(False))
+print(2^3)
