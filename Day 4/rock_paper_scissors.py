@@ -1,4 +1,5 @@
 from random import randint
+from sys import exit
 
 rock = """
     _______
@@ -35,6 +36,9 @@ sign_mapping = {
 
 user_input = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for " +
                     "Scissors.\n"))
+if not user_input in sign_mapping:
+    print("Invalid Input")
+    exit()
 print(sign_mapping[user_input])
 
 print("Computer chose:")
