@@ -25,6 +25,6 @@ for i in range(0,nr_numbers):
     password += symbols[randint(0,len(symbols) - 1)]
 
 pass_list = list(password)
-print(pass_list)
 shuffle(pass_list)
+
 print(''.join(pass_list))

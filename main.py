@@ -1,4 +1,1 @@
-print(type(122))
-print(type(122.121))
-print("ookdosw" == None)
-print(2^3)
+print({"1": "Hello", "2": "Bye", "3": "Hello"}.values())
