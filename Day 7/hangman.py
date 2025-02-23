@@ -15,7 +15,6 @@ def fill_the_guess_list(guess_list, s_word_dict, guess_letter):
 
 def play_hangman():
     words_list = ["Avenger", "Spiderman", "Superman", "Hobbit", "Lordoftherings"]
-    win = False
     s_word = choice(words_list).upper()
     lives = 7
     all_guesses = []
@@ -52,8 +51,9 @@ def play_hangman():
             lives -= 1
 
     if not lives:
-        print("You dead!")
+        print(f"You dead! {s_word} was the correct word.")
     else:
+        print("".join(guess_list))
         print("You live!")
 
 
