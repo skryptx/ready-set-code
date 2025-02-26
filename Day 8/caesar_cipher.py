@@ -1,11 +1,11 @@
-def encode(msg, shift):
+def encode(msg, shift) -> str:
     encode_list = []
     for char in msg:
         offset = ((ord(char)- 96) + shift) % 26
         encode_list.append(chr(offset+96))
     return ''.join(encode_list)
 
-def decode(msg, shift):
+def decode(msg, shift) -> str:
     encode_list = []
     for char in msg:
         offset = ((ord(char)- 96) - shift)%26
