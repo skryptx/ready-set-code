@@ -20,4 +20,5 @@ for student in student_scores:
 
     student_grades[student] = grade
 
+
 print(student_grades)
