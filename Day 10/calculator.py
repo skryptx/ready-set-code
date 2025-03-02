@@ -1,7 +1,7 @@
 from utilities.clear_console import clear
 
 
-def apply_operator(f_num, s_num, operator) -> int | None:
+def apply_operator(f_num: int, s_num: int, operator: str) -> int | float | None:
     if operator == "+":
         return f_num + s_num
     elif operator == "-":
