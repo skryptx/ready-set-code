@@ -1,1 +1,4 @@
-print({"1": "Hello", "2": "Bye", "3": "Hello"}.values())
+f_name = "sinni"
+f_name = f_name.capitalize()
+
+print(f_name)
