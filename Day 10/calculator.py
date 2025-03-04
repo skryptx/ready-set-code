@@ -34,5 +34,6 @@ def calculator():
         end = input("Type 'y' if you want to end the calculation else 'n': ")
         clear()
 
+
 calculator()
 
