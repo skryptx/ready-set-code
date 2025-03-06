@@ -1,6 +1,6 @@
 import os 
 
-def rename_folders(directory_path):
+def rename_folders_in_directory(directory_path):
     """
     Renames folders within a given directory based on a specified pattern. 
     
