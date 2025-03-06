@@ -1,4 +1,3 @@
-f_name = "sinni"
-f_name = f_name.capitalize()
-
-print(f_name)
+# Example usage
+directory_to_rename = "/Users/sisingla/Workspace/misc/100DaysOfPython"
+rename_folders(directory_to_rename)
