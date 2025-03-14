@@ -50,7 +50,7 @@ def game_kickoff() -> None:
 
         if comp_total > MAX_TOTAL or user_total > comp_total:
             print("You Win!")
-        elif comp_total > user_total:
+        elif comp_total == 21 or comp_total > user_total:
             print("You Lost!")
         else:
             print("It is a tie!")
