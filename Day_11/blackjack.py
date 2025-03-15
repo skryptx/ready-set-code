@@ -16,23 +16,25 @@ def get_total(cards: list[int]) -> int:
 
 
 def game_kickoff() -> None:
-    user_total = 0
-    comp_total = 0
+    user_total: int = 0
+    comp_total: int = 0
     user_cards: list[int] = [pick_random_card(user_total)]
     comp_cards: list[int] = []
+    user_total = get_total(user_cards)
     user_choice = "y"
     MAX_TOTAL = 21
 
-    while comp_total < MAX_TOTAL and user_total < MAX_TOTAL and user_choice == "y":
+    while user_choice == "y":
         user_cards.append(pick_random_card(user_total))
         user_total = get_total(user_cards)
         print(f"Your cards: {user_cards}, Total: {user_total} ")
 
-        if user_total > MAX_TOTAL:
-            break
-
         comp_cards.append(pick_random_card(comp_total))
         comp_total = get_total(comp_cards)
+
+        if user_total >= MAX_TOTAL or comp_total >= MAX_TOTAL:
+            break
+        
         print(f"Computer cards: {comp_cards}, Total: {comp_total} ")
 
         user_choice = input("Want to pick one more card? y/n: ")
