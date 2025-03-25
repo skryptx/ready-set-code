@@ -3,4 +3,4 @@
 
 ### Full Curriculum
 
-[Angela Yu - 100 Days of Python](01_angela_yu)<br>
+[Angela Yu - 100 Days of Code](01_angela_yu)<br>
