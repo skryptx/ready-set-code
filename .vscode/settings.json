@@ -1,0 +1,4 @@
+{
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "notebook.defaultFormatter": "ms-python.autopep8"
+}
