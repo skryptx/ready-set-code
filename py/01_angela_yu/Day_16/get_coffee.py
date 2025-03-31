@@ -5,9 +5,9 @@ from coins import Coins
 
 
 def get_coffee(coffee_machine: CoffeeMachine) -> None:
-    machine_off = False
+    machine_on: bool = True
 
-    while not machine_off:
+    while machine_on:
         user_input = str.capitalize(input(
             "What would you like? ((espresso/latte/cappuccino): "))
 
@@ -16,7 +16,7 @@ def get_coffee(coffee_machine: CoffeeMachine) -> None:
             continue
 
         if user_input == "Off":
-            machine_off = True
+            machine_on = False
             continue
 
         is_resources_available = coffee_machine.check_resources(user_input)
@@ -45,7 +45,8 @@ def prepare_machine() -> CoffeeMachine:
     return CoffeeMachine([
         Coffee("Espresso", 50, 5, 25, Decimal(5)),
         Coffee("Cappuccino", 40, 15, 15, Decimal(4)),
-        Coffee("Latte", 50, 60, 5, Decimal(7))], 100, 100, 100, Decimal(5)
+        Coffee("Latte", 50, 60, 5, Decimal(7))],
+        100, 100, 100, Decimal(5)
     )
 
 
