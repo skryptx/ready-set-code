@@ -169,3 +169,12 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# angular
+ng/**/node_modules
+ng/**/.angular
+ng/**/.nx
+ng/**/.vscode
+
+# Mac Specific
+.DS_Store
