@@ -1,8 +1,14 @@
 import { Route } from '@angular/router';
+import { ccRoutes } from './cc-routes';
+import { umRoutes } from './um-routes';
 
 export const appRoutes: Route[] = [
   {
     path: '',
-    loadChildren: () => import('./um-routes').then((c) => c.umRoutes),
+    children: umRoutes,
+  },
+  {
+    path: 'course-catalog',
+    children: ccRoutes,
   },
 ];

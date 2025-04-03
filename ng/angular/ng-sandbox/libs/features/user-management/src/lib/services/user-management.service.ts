@@ -7,7 +7,7 @@ export class UserManagementService {
   private _user: User;
 
   public get user(): User {
-    return this._user;
+    return this._user ?? { email: 'admin', password: 'password' };
   }
 
   public registerUser(user: User): Observable<void> {

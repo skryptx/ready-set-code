@@ -7,4 +7,4 @@ import { MatCardModule } from '@angular/material/card';
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
-export class CardComponentTsComponent {}
+export class CardComponent {}
