@@ -1,3 +1,9 @@
 <mat-card appearance="outlined">
-  <mat-card-content>Simple card</mat-card-content>
+  <mat-card-content>
+    <ng-container
+      [ngTemplateOutlet]="cardContentTmpl() ?? null"
+      [ngTemplateOutletContext]="{ item: data() }"
+    >
+    </ng-container
+  ></mat-card-content>
 </mat-card>

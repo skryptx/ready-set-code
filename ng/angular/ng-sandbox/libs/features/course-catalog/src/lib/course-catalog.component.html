@@ -1,0 +1,7 @@
+@for (course of courses; track course.id) {
+<ui-card [data]="course">
+  <ng-template #cardContentTmpl let-item="item">
+    {{ item.title }}
+  </ng-template>
+</ui-card>
+}

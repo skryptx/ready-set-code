@@ -1,1 +1,1 @@
-export * from './lib/course-catalog/course-catalog.component';
+export * from './lib/course-catalog.component';
