@@ -19,7 +19,8 @@
       "@ng-sandbox/domain": ["libs/domain/src/index.ts"],
       "@ng-sandbox/features/user-management": [
         "libs/features/user-management/src/index.ts"
-      ]
+      ],
+      "@ng-sandbox/shared/ui": ["libs/shared/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
