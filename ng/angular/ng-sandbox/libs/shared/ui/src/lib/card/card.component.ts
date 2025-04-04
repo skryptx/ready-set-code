@@ -1,12 +1,7 @@
 import { NgTemplateOutlet } from '@angular/common';
-import {
-  AfterContentInit,
-  Component,
-  contentChild,
-  input,
-  TemplateRef,
-} from '@angular/core';
+import { Component, contentChild, input, TemplateRef } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { CardContentDirective } from '@ng-sandbox/shared/helpers';
 
 @Component({
   selector: 'ui-card',
@@ -14,15 +9,10 @@ import { MatCardModule } from '@angular/material/card';
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
-export class CardComponent implements AfterContentInit {
-  protected cardContentTmpl = contentChild('cardContentTmpl', {
+export class CardComponent {
+  protected cardContentTmpl = contentChild(CardContentDirective, {
     read: TemplateRef,
   });
 
-  data = input<any>();
-
-  public ngAfterContentInit(): void {
-    console.log(this.cardContentTmpl);
-    console.log(this.data);
-  }
+  data = input<unknown>();
 }

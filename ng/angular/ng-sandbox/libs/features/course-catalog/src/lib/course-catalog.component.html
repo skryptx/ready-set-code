@@ -1,7 +1,8 @@
-@for (course of courses; track course.id) {
+@for (course of courses$ | async; track course.id) {
 <ui-card [data]="course">
-  <ng-template #cardContentTmpl let-item="item">
-    {{ item.title }}
+  <ng-template hpCardContentTmpl let-item="item">
+    <div>{{ item.title }}</div>
+    <img [src]="item.imageUrl" alt="item.title" />
   </ng-template>
 </ui-card>
 }
