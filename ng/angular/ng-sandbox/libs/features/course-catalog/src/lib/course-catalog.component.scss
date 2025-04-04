@@ -1,20 +1,28 @@
 :host {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    flex-wrap: wrap;
-    flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-grow: 2;
 
-    ui-card {
-        margin: 0 0 1em 0;
-        width: 50%;
-        text-align: center;
-        font-size: 1.5vw;
+  ui-card {
+    margin: 0 0 1em 0;
+    width: 50%;
+    text-align: center;
+    font-size: 1.5vw;
 
-        img {
-            width: 70%;
-            height: 300px;
-            margin: 0 15%;
-        }
+    img {
+      width: 70%;
+      height: 300px;
+      margin: 0 15%;
     }
+  }
+}
+
+.first {
+  background-color: antiquewhite;
+}
+
+.second {
+  background-color: aqua;
 }

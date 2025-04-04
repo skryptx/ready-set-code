@@ -8,7 +8,7 @@ import { CardComponent } from '@ng-sandbox/shared/ui';
 import { Course } from './interfaces';
 import { CardContentDirective } from '@ng-sandbox/shared/helpers';
 import { AsyncPipe } from '@angular/common';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'cc-course-catalog',
@@ -18,9 +18,10 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CourseCatalogComponent implements OnInit {
-  protected get courses$(): Observable<Course[]> {
+  protected get courses$(): Observable<Course[]> { 
     return this._courses$.asObservable();
   }
+  protected enable = true;
   private _courses$ = new BehaviorSubject<Course[]>([]);
   private courses: Course[] = [];
 
