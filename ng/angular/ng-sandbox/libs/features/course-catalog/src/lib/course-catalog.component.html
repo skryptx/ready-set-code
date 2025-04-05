@@ -1,6 +1,11 @@
 @for (course of courses$ | async; track i; let i = $index;) {
-<ui-card [data]="course">
-  <ng-template hpCardContentTmpl let-item="item">
+<ui-card
+  hpHighlighted
+  [color]="'green'"
+  [backgroundColor]="'red'"
+  [data]="course"
+>
+  <ng-template hpCardContentTmpl let-item="course">
     <div>{{ i }} - {{ item.title }}</div>
     <img [src]="item.imageUrl" alt="item.title" />
   </ng-template>

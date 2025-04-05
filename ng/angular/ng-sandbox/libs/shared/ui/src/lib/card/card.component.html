@@ -1,8 +1,7 @@
 <mat-card appearance="outlined">
   <mat-card-content>
     <ng-container
-      [ngTemplateOutlet]="cardContentTmpl() ?? null"
-      [ngTemplateOutletContext]="{ item: data() }"
+      *ngTemplateOutlet="cardContentTmpl() ?? null; context: { course: data() }"
     >
     </ng-container
   ></mat-card-content>

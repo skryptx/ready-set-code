@@ -6,19 +6,27 @@ import {
 } from '@angular/core';
 import { CardComponent } from '@ng-sandbox/shared/ui';
 import { Course } from './interfaces';
-import { CardContentDirective } from '@ng-sandbox/shared/helpers';
+import {
+  CardContentDirective,
+  HighlightedDirective,
+} from '@ng-sandbox/shared/helpers';
 import { AsyncPipe } from '@angular/common';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'cc-course-catalog',
-  imports: [CardComponent, CardContentDirective, AsyncPipe],
+  imports: [
+    CardComponent,
+    CardContentDirective,
+    AsyncPipe,
+    HighlightedDirective,
+  ],
   templateUrl: './course-catalog.component.html',
   styleUrl: './course-catalog.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CourseCatalogComponent implements OnInit {
-  protected get courses$(): Observable<Course[]> { 
+  protected get courses$(): Observable<Course[]> {
     return this._courses$.asObservable();
   }
   protected enable = true;
