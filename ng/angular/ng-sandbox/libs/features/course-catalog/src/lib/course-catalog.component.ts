@@ -1,65 +1,41 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  OnInit,
-} from '@angular/core';
-import { CardComponent } from '@ng-sandbox/ui';
-import { Course } from './interfaces';
-import { CardContentDirective, HighlightedDirective } from '@ng-sandbox/shared';
-import { AsyncPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { CourseListComponent } from './course-list/course-list.component';
+import { CourseInfoComponent } from './course-info/course-info.component';
+import { CourseService } from './services/course.service';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Course } from './interfaces';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'cc-course-catalog',
-  imports: [
-    CardComponent,
-    CardContentDirective,
-    AsyncPipe,
-    HighlightedDirective,
-  ],
+  imports: [AsyncPipe, CourseListComponent, CourseInfoComponent],
   templateUrl: './course-catalog.component.html',
   styleUrl: './course-catalog.component.scss',
+  providers: [CourseService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CourseCatalogComponent implements OnInit {
-  protected get courses$(): Observable<Course[]> {
-    return this._courses$.asObservable();
-  }
-  protected enable = true;
-  private _courses$ = new BehaviorSubject<Course[]>([]);
-  private courses: Course[] = [];
+  private _selectedCourse$ = new BehaviorSubject<Course | null>(null);
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private courseService: CourseService) {}
+
+  protected get selectedCourse$(): Observable<Course | null> {
+    return this._selectedCourse$.asObservable();
+  }
 
   public ngOnInit(): void {
     this.initCourses();
   }
 
-  private initCourses(): void {
-    this.courses = [
-      {
-        id: 1,
-        title: 'Become a Python Champion',
-        imageUrl: 'https://picsum.photos/id/237/200/300',
-      },
-      {
-        id: 2,
-        title: 'Master Angular like a Boss',
-        imageUrl: 'https://picsum.photos/seed/picsum/200/300',
-      },
-    ];
-    this._courses$.next(this.courses);
-    this.cdr.markForCheck();
-    setInterval(
-      function (this: CourseCatalogComponent) {
-        this._courses$.next([...this.courses, ...this.courses]);
-      }.bind(this),
-      2000
-    );
+  protected onSelectCourse(course: Course): void {
+    this._selectedCourse$.next(course);
   }
 
-  protected fakeEvent(): void {
-    console.log('Fake Event Called!');
+  protected closeCourseInfo(): void {
+    this._selectedCourse$.next(null);
+  }
+
+  private initCourses(): void {
+    this.courseService.initCourses();
   }
 }

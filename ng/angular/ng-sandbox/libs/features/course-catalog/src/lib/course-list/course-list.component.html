@@ -1,0 +1,14 @@
+@for (course of courses$ | async; track i; let i = $index;) {
+<ui-card
+  shHighlighted
+  [color]="'green'"
+  [backgroundColor]="'red'"
+  [data]="course"
+  (click)="onSelectCourse(course)"
+>
+  <ng-template shCardContentTmpl let-item="course">
+    <div>{{ i }} - {{ item.title }}</div>
+    <img [src]="item.imageUrl" alt="item.title" />
+  </ng-template>
+</ui-card>
+}

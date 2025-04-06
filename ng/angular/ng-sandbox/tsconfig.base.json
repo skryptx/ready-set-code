@@ -23,8 +23,8 @@
       "@ng-sandbox/features/user-management": [
         "libs/features/user-management/src/index.ts"
       ],
-      "@ng-sandbox/ui": ["libs/ui/src/index.ts"],
-      "@ng-sandbox/shared": ["libs/shared/src/index.ts"]
+      "@ng-sandbox/shared": ["libs/shared/src/index.ts"],
+      "@ng-sandbox/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

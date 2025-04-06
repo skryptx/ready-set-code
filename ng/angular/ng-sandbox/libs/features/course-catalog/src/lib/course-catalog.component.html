@@ -1,13 +1,9 @@
-@for (course of courses$ | async; track i; let i = $index;) {
-<ui-card
-  shHighlighted
-  [color]="'green'"
-  [backgroundColor]="'red'"
-  [data]="course"
->
-  <ng-template shCardContentTmpl let-item="course">
-    <div>{{ i }} - {{ item.title }}</div>
-    <img [src]="item.imageUrl" alt="item.title" />
-  </ng-template>
-</ui-card>
-}
+<div class="course-container">
+  <cc-course-list (selectCourse)="onSelectCourse($event)"></cc-course-list>
+  @if(selectedCourse$ | async; as course) {
+  <cc-course-info
+    [selectedCourse]="course"
+    (closeCourseInfo)="closeCourseInfo()"
+  ></cc-course-info>
+  }
+</div>

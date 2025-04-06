@@ -1,0 +1,5 @@
+@if(selectedCourse) {
+<button (click)="onClose()">X</button>
+<h1>{{ selectedCourse.title }}</h1>
+<img [src]="selectedCourse.imageUrl" alt="course.title" />
+}
