@@ -4,12 +4,9 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-import { CardComponent } from '@ng-sandbox/shared/ui';
+import { CardComponent } from '@ng-sandbox/ui';
 import { Course } from './interfaces';
-import {
-  CardContentDirective,
-  HighlightedDirective,
-} from '@ng-sandbox/shared/helpers';
+import { CardContentDirective, HighlightedDirective } from '@ng-sandbox/shared';
 import { AsyncPipe } from '@angular/common';
 import { BehaviorSubject, Observable } from 'rxjs';
 

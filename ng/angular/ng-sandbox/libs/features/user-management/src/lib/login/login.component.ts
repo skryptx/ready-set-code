@@ -9,11 +9,11 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { UserManagementService } from '../services';
 import { User } from '@ng-sandbox/domain';
 import { Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { filter } from 'rxjs';
+import { UserManagementService } from '@ng-sandbox/shared';
 
 interface UserFormGroup {
   email: FormControl<string | null>;

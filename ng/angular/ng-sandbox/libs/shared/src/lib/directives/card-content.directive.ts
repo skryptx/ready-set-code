@@ -1,7 +1,7 @@
 import { Directive, inject, TemplateRef } from '@angular/core';
 
 @Directive({
-  selector: '[hpCardContentTmpl]',
+  selector: '[shCardContentTmpl]',
 })
 export class CardContentDirective {
   public tmpl = inject(TemplateRef);

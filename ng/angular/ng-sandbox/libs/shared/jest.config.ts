@@ -1,8 +1,8 @@
 export default {
-  displayName: 'shared-helpers',
-  preset: '../../../jest.preset.js',
+  displayName: 'ng-shared',
+  preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../coverage/libs/shared/helpers',
+  coverageDirectory: '../../coverage/libs/shared',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

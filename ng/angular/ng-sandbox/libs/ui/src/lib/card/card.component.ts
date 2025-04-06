@@ -1,7 +1,7 @@
 import { NgTemplateOutlet } from '@angular/common';
 import { Component, contentChild, input, TemplateRef } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { CardContentDirective } from '@ng-sandbox/shared/helpers';
+import { CardContentDirective } from '@ng-sandbox/shared';
 
 @Component({
   selector: 'ui-card',

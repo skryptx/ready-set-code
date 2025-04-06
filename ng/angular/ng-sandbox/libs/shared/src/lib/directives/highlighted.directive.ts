@@ -1,13 +1,7 @@
-import {
-  Directive,
-  ElementRef,
-  HostBinding,
-  HostListener,
-  Input,
-} from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[hpHighlighted]',
+  selector: '[shHighlighted]',
 })
 export class HighlightedDirective {
   @Input() public color = 'yellow';
