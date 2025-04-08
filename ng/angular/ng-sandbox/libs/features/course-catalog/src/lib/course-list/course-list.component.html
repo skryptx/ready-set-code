@@ -1,3 +1,5 @@
+<input #searchTerm [formControl]="search" type="text" />
+
 @for (course of courses$ | async; track i; let i = $index;) {
 <ui-card
   shHighlighted

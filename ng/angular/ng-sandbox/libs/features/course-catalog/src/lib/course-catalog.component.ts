@@ -5,7 +5,9 @@ import { CourseService } from './services/course.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Course } from './interfaces';
 import { AsyncPipe } from '@angular/common';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
+@UntilDestroy()
 @Component({
   selector: 'cc-course-catalog',
   imports: [AsyncPipe, CourseListComponent, CourseInfoComponent],
@@ -36,6 +38,6 @@ export class CourseCatalogComponent implements OnInit {
   }
 
   private initCourses(): void {
-    this.courseService.initCourses();
+    this.courseService.getCourses('').pipe(untilDestroyed(this)).subscribe();
   }
 }

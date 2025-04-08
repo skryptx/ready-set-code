@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Course } from '../interfaces';
 import { BehaviorSubject, map, Observable, of } from 'rxjs';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-@UntilDestroy()
 export class CourseService {
   private _courses$ = new BehaviorSubject<Course[]>([]);
 
@@ -32,21 +30,28 @@ export class CourseService {
     return this._courses$.asObservable();
   }
 
-  public initCourses(): void {
-    this.getCourses(false)
-      .pipe(untilDestroyed(this))
-      .subscribe((courses) => this._courses$.next(courses));
-  }
+  public getCourses(term: string, mock = true): Observable<Course[]> {
+    let courseObs$: Observable<Course[]>;
 
-  public getCourses(mock = true): Observable<Course[]> {
     if (mock) {
-      return of(this.mockData);
+      courseObs$ = of(this.mockData);
+    } else {
+      courseObs$ = this.http
+        .get<{ data: Course[] }>(
+          'https://run.mocky.io/v3/6e67152c-fb8f-4089-880e-01f1e4739071'
+        )
+        .pipe(map(({ data }: { data: Course[] }) => data));
     }
 
-    return this.http
-      .get<{ data: Course[] }>(
-        'https://run.mocky.io/v3/6e67152c-fb8f-4089-880e-01f1e4739071'
-      )
-      .pipe(map(({ data }: { data: Course[] }) => data));
+    return courseObs$.pipe(
+      map((courses: Course[]) => {
+        const filteredCourses = courses.filter((course) =>
+          course.title.includes(term)
+        );
+        this._courses$.next(filteredCourses);
+
+        return filteredCourses;
+      })
+    );
   }
 }

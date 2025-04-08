@@ -6,14 +6,12 @@ import {
   OnInit,
   output,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { CourseService } from '../services/course.service';
 import { Course } from '../interfaces';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'cc-course-info',
-  imports: [CommonModule],
   templateUrl: './course-info.component.html',
   styleUrl: './course-info.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
