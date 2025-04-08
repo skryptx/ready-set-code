@@ -1,5 +1,11 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, contentChild, input, TemplateRef } from '@angular/core';
+import {
+  Component,
+  contentChild,
+  ContentChild,
+  input,
+  TemplateRef,
+} from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { CardContentDirective } from '@ng-sandbox/shared';
 
@@ -10,9 +16,7 @@ import { CardContentDirective } from '@ng-sandbox/shared';
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
-  protected cardContentTmpl = contentChild(CardContentDirective, {
-    read: TemplateRef,
-  });
+  protected cardContentTmpl = contentChild(CardContentDirective);
 
   data = input<unknown>();
 }
