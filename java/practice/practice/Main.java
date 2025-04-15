@@ -1,10 +1,29 @@
+class People {
+    String name;
+    static String department;
+
+    static {
+        department = "CS";
+        System.out.println("Static Block");
+    }
+
+    public People(String name) {
+        this.name = name;
+        System.out.println("Constructor");
+    }
+
+    public void printName() {
+        System.out.printf("Name: %s", name);
+    }
+
+    public static void printDetails() {
+        System.out.printf("Department: %s", department);
+    }
+}
 public class Main {
     public static void main(String[] args) {
-        String name1 = "Sinni";
-        String name2 = "Sinni";
-        if(name1.equals(name2)) {
-            System.out.println("equal");
-        }
-        System.out.format("%d, %d", System.identityHashCode(name1), System.identityHashCode(name2));
+        People myObj = new People("Sinni");
+        myObj.printName();
+        People.printDetails();
     }
 }
