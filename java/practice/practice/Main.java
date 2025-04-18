@@ -23,7 +23,6 @@ class People {
 public class Main {
     public static void main(String[] args) {
         People myObj = new People("Sinni");
-        People myObj1 = new People("Sinni");
         myObj.printName();
         People.printDetails();
     }
