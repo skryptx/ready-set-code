@@ -1,8 +1,8 @@
-package Inheritence;
+package Inheritence.SubP1;
 
 public class Calculator {
-    private int n1;
-    private int n2;
+    private final int n1;
+    private final int n2;
 
     public Calculator(int n1, int n2) {
         this.n1 = n1;
