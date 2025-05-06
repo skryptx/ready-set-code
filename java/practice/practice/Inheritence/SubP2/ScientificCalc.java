@@ -7,7 +7,6 @@ public class ScientificCalc extends AdvCalculator {
         super(n1, n2);
     }
 
-
     public int divide() {
         return n1/n2;
     }
