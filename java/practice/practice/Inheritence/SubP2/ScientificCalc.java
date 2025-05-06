@@ -11,6 +11,7 @@ public class ScientificCalc extends AdvCalculator {
         return n1/n2;
     }
 
+
     public static void main(String[] args) {
         System.out.println(new ScientificCalc(132,66).divide());
         System.out.println(new ScientificCalc(4,5).add());
