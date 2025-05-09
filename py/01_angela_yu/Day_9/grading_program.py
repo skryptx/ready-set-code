@@ -7,18 +7,18 @@ student_scores = {
 }
 student_grades = {}
 
-for student in student_scores:
+for student in student_scores.items():
     grade = ""
-    if student_scores[student] > 90:
+    if student[1] > 90:
         grade = "Outstanding"
-    elif student_scores[student] > 80:
+    elif student[1] > 80:
         grade = "Exceeds Expectations"
-    elif student_scores[student] > 70:
+    elif student[1] > 70:
         grade = "Acceptable"
     else:
         grade = "Fail"
 
-    student_grades[student] = grade
+    student_grades[student[0]] = grade
 
 
 print(student_grades)
