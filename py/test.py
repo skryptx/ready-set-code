@@ -1,13 +1,8 @@
-from enum import auto, Enum
+"""temp"""
 
+name = "Sinni Singla"
 
-class PowersOfThree(Enum):
-
-    @staticmethod
-    def _generate_next_value_(name, start, count, last_values):
-        return 3 ** (count + 1)
-    FIRST = auto()
-    SECOND = auto()
-
-
-print(PowersOfThree.SECOND.value)
+print(name[len(name) : 0 : -1])
+new_name = f"Shanky{name[5:]}"
+print(new_name)
+print(int("2") + 3)
