@@ -4,11 +4,13 @@ Read file
 
 import os
 
-ROOT_DIR = f"{os.path.abspath(os.curdir)}/02_jose_portilla/jupiter_notebooks/04-file-io"
-print(ROOT_DIR)
+ROOT_DIR = (
+    f"{os.path.abspath(os.curdir)}/02_jose_portilla" "/jupiter_notebooks/04-file-io/"
+)
 
-myfile = open(f"{ROOT_DIR}/sample.txt", mode="r")
-while myfile.closed is False:
-    print(myfile.read())
-    if myfile.seekable():
-        myfile.close()
+print()
+with open(f"{ROOT_DIR}/sample.txt", mode="r", encoding="utf-8") as my_file:
+    while my_file.closed is False:
+        print(my_file.read())
+        if my_file.seekable():
+            my_file.close()
