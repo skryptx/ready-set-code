@@ -9,3 +9,4 @@ print(int("2") + 3)
 
 apples = "apples"
 print(f"I like {apples}")
+x = 3
