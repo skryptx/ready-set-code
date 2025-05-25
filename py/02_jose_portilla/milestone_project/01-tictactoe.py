@@ -53,10 +53,11 @@ def lets_play_tictactoe() -> None:
     state: list[list[ValidPlayers | int]] = [
         [1, 2, 3], [4, 5, 6], [7, 8, 9]]
     turns_completed = 0
+    _MAX_TURNS = 9
 
     player_turn: ValidPlayers = 'X'
 
-    while check_winner(state) == None and turns_completed != 9:
+    while check_winner(state) == None and turns_completed != _MAX_TURNS:
         display_current_state(state)
         box_played = int(input("Please enter the position: "))
         move_by_player(state, player_turn, box_played)
