@@ -42,9 +42,6 @@ def check_winner(state: list[list[ValidPlayers | int]]) -> ValidPlayers | None:
         else:
             continue
 
-        if starting_symbol not in ['X', 'O']:
-            continue
-
         if (state[position[1][0]][position[1][1]] == starting_symbol and
                 state[position[2][0]][position[2][1]] == starting_symbol):
             return cast(ValidPlayers, starting_symbol)
