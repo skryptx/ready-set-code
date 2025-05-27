@@ -2,10 +2,15 @@
 Problem 1
 Fill in the Line class methods to accept coordinates as a pair of tuples
 and return the slope and distance of the line.
+
+Problem 2
+Fill in the Cylinder class methods to accept height and radius
+and calculate volume and surface area
 """
 
 from math import pi
 
+# Problem 1
 
 class Line:
     """
@@ -36,12 +41,7 @@ print(line.distance())
 print(line.slope())
 
 
-"""
-Problem 2
-Fill in the Cylinder class methods to accept height and radius
-and calculate volume and surface area
-"""
-
+# Problem 2
 
 class Cylinder:
     """
