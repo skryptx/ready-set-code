@@ -1,5 +1,5 @@
 """Dog class with breed and spots properties"""
-
+from typing import override
 
 class Dog:
     """
@@ -15,7 +15,8 @@ class Dog:
         self.breed = breed
         self.spots = spots
 
-    def __str__(self):
+    @override
+    def __str__(self) -> str:
         return (
             f"{self.name} is a {self.species}, a {self.breed} and "
             f"{"do" if self.spots else "does not"} have spots"
