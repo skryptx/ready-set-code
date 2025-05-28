@@ -19,12 +19,12 @@ class Account:
     during Withdraw, the amount should not go in negative
     """
 
-    def __init__(self, owner: str, balance: int):
+    def __init__(self, owner: str, balance=0):
         self.owner = owner
         self.balance = balance
 
     def deposit(self, amount: int) -> None:
-        if self.balance <= 0:
+        if amount <= 0:
             print("Invalid Amount!")
             return
 
@@ -44,7 +44,7 @@ class Account:
 
 
 # 1. Instantiate the class
-acct1 = Account("Jose", 100)
+acct1 = Account("Jose")
 
 # 2. Print the object
 print(acct1)
@@ -56,7 +56,7 @@ print(acct1.owner)
 print(acct1.balance)
 
 # 5. Make a series of deposits and withdrawals
-acct1.deposit(50)
+acct1.deposit(100)
 acct1.withdraw(75)
 
 # 6. Make a withdrawal that exceeds the available balance
