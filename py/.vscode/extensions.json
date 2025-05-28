@@ -1,0 +1,6 @@
+{
+  "recommendations": ["hediet.vscode-drawio", "akamud.vscode-theme-onedark",  
+                    "eamodio.gitlens", "ms-toolsai.jupyter", "ms-python.mypy-type-checker",
+                    "johnpapa.vscode-peacock", "ms-python.python", "ms-python.debugpy"
+                ]
+}
