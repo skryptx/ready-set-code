@@ -15,7 +15,6 @@ Print statements will not work here.
 """
 
 
-
 def myfunc(val: str) -> str:
     result = ""
     for index, letter in enumerate(val):
