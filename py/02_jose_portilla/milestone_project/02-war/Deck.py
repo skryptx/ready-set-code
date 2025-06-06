@@ -6,7 +6,7 @@ from CardType import CardType
 import uuid
 
 class Deck:
-    cards: list[Card]
+    cards: list[Card] = list()
 
     def __init__(self):
         self.build_deck()
@@ -14,7 +14,7 @@ class Deck:
     def build_deck(self) -> None:
         for type in CardType:
             for value in range(2,15):
-                card = Card(str(uuid.uuid4()), type, value)
+                card = Card(str(uuid.uuid4()), type, value, value)
                 self.cards.append(card)
     
     def __str__(self) -> str:
