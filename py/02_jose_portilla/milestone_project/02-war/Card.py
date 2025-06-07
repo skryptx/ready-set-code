@@ -4,15 +4,17 @@ id: unique identifier
 type: Enum<Spade, Heart, Diamond, Club>
 rank: 2 to 14(Ace)
 """
-from CardType import CardType
+from enums.CardType import CardType
+from enums.CardValue import CardValue
+
 
 class Card:
     id: str
     type: CardType
-    value: int
+    value: str
     rank: int
 
-    def __init__(self, id: str, type: CardType, value: int, rank: int):
+    def __init__(self, id: str, type: CardType, value: str, rank: int):
         self.id = id
         self.type = type
         self.value = value
