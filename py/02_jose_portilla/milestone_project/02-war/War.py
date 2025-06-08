@@ -34,6 +34,8 @@ class War:
             print(player)
 
     def set_eligible_players(self) -> None:
+        self.eligible_players = []
+
         for player in self.players:
             if player.is_eligible() == True:
                 self.eligible_players.append(player)
@@ -41,9 +43,6 @@ class War:
     def move_all_losers_cards_to_winning_player(self, winning_player: Player) -> None:
         for player in self.players:
             player.transfer_cards(winning_player)
-
-    def reset(self) -> None:
-        self.eligible_players = []
 
     def draw_one_card_each_player(self) -> None:
         for player in self.eligible_players:
@@ -63,7 +62,6 @@ class War:
                 player.is_out_for_turn = True
 
         if len(highest_card_players) > 1:
-            self.reset()
             self.set_eligible_players()
         else:
             self.move_all_losers_cards_to_winning_player(
