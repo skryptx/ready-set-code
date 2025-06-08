@@ -2,6 +2,7 @@
 Player class tracks players info and cards stack,
 the player holds
 """
+from copy import deepcopy
 from Card import Card
 from typing import Self
 
@@ -20,7 +21,7 @@ class Player:
         self.is_out_for_turn = False
         self.is_disqualified = False
 
-    def select_card(self) -> Card:
+    def draw_one_card(self) -> None:
         """selects the top card from player cards property
         Raises:
             Exception: if the deck is empty an exception will be raised
@@ -33,9 +34,8 @@ class Player:
             raise Exception("Player does not have any more cards")
         card = self.cards.pop()
         self.selected_cards.append(card)
-        return card
 
-    def transfer_cards(self, cards: list[Card], winner_player: Self) -> None:
+    def transfer_cards(self, winner_player: Self) -> None:
         """removed cards from current user and adds it to
         card property of winner_player
 
@@ -49,9 +49,11 @@ class Player:
         """
 
         # add cards in front of winner player cards
+        cards = deepcopy(self.selected_cards)
         cards.extend(winner_player.selected_cards)
         cards.extend(winner_player.cards)
         winner_player.cards = cards
+        self.selected_cards = []
 
     def get_printable_string_from_list(self, cards: list[Card]) -> str:
         output = ''
@@ -59,6 +61,9 @@ class Player:
             output = f"{output} {card.value} {card.type.name}\n"
 
         return output
+
+    def is_eligible(self) -> bool:
+        return not self.is_disqualified and not self.is_out_for_turn
 
     def __str__(self) -> str:
         return f"""Name: {self.name}\n
