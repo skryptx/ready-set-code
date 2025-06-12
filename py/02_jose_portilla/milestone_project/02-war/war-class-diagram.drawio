@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="DvX-TYMQqczHphd8S_UL" name="Page-1">
-        <mxGraphModel dx="752" dy="801" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="907" dy="802" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -22,7 +22,7 @@
                 <mxCell id="14" value="&lt;div&gt;name: str&lt;/div&gt;cards: list[Card]&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;selected_cards: list[Card]&lt;br&gt;&lt;/font&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;select_card(): Card&lt;/div&gt;&lt;/div&gt;&lt;div&gt;transfer_cards(player: Player)&lt;/div&gt;&lt;div&gt;is_disqualified()-&amp;gt; bool&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="12" vertex="1">
                     <mxGeometry y="29" width="310" height="151" as="geometry"/>
                 </mxCell>
-                <mxCell id="28" style="edgeStyle=none;html=1;" edge="1" parent="1" source="19">
+                <mxCell id="28" style="edgeStyle=none;html=1;" parent="1" source="19" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="635" y="360" as="targetPoint"/>
                     </mxGeometry>
@@ -51,7 +51,7 @@
                 <mxCell id="27" value="*:1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
                     <mxGeometry x="380" y="270" width="40" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" value="1:1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                <mxCell id="29" value="1:1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
                     <mxGeometry x="630" y="388" width="40" height="30" as="geometry"/>
                 </mxCell>
             </root>
