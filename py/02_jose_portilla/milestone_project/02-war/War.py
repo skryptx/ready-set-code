@@ -63,13 +63,27 @@ class War:
 
         if len(highest_card_players) > 1:
             self.set_eligible_players()
+            self.draw_one_card_each_player()
         else:
             self.move_all_losers_cards_to_winning_player(
                 highest_card_players[0])
+    
+    def reset_out_of_turn_prop(self) -> None:
+        for player in self.eligible_players:
+            player.is_out_for_turn = False
+            if player.cards == 0:
+                player.is_disqualified = True
 
     def play(self) -> None:
         while not len(self.eligible_players) == 1:
-            pass
+            self.draw_one_card_each_player()
+            self.evaluate_drawn_cards()
+
+            self.reset_out_of_turn_prop()
+            self.set_eligible_players()
+
+        
 
 
 war = War()
+war.play()

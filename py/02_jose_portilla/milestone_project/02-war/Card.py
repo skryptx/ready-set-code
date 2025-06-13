@@ -21,4 +21,4 @@ class Card:
         self.rank = rank
 
     def __str__(self) -> str:
-        return f"Type: {self.type.name}  value: {self.value}"
+        return f"Type: {self.type.name}  value: {self.value} rank: {self.rank}"
