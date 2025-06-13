@@ -53,6 +53,7 @@ class Player:
         cards.extend(winner_player.selected_cards)
         cards.extend(winner_player.cards)
         winner_player.cards = cards
+        winner_player.selected_cards = []
         self.selected_cards = []
 
     def get_printable_string_from_list(self, cards: list[Card]) -> str:
@@ -63,7 +64,7 @@ class Player:
         return output
 
     def is_eligible(self) -> bool:
-        return not self.is_disqualified and not self.is_out_for_turn
+        return len(self.cards) != 0 and self.is_out_for_turn == False
 
     def __str__(self) -> str:
         return f"""Name: {self.name}\n

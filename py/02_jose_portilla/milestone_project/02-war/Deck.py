@@ -16,7 +16,6 @@ class Deck:
     def build_deck(self) -> None:
         for type in CardType:
             for value in CardValue:
-                print(value.value)
                 card = Card(str(uuid.uuid4()), type, value.name, value.value)
                 self.cards.append(card)
 
