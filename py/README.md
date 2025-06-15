@@ -29,16 +29,16 @@ green{
 #### `Knowledge Check`:
 - `Core Python Concepts`:
     - if, loops, functions - <green>&check;</green>
-    - tuple, list, set, dictionary
-    - named tuple, default dictionary
-    - OOP, classes
-    - Dunder methods(__method__)
-    - file handling
+    - tuple, list, set, dictionary - <green>&check;</green>
+    - named tuple, default dictionary - 
+    - OOP, classes - <green>&check;</green>
+    - Dunder methods(__method__) - <green>&check;</green>
+    - file handling - <green>&check;</green>
     - json files
     - error handling
     - memory management
 - `Language Paragigm`
-    - What type of language is Python?
+    - What type of language is Python? - <green>&check;</green>
 - `Concurrency & Parallelism`
     - Threading
     - Multi Processing
